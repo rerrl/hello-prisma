@@ -1,5 +1,17 @@
+# Prisma Basics and Demo
+
+## Init
+
 start services:
 `docker compose up -d`
+
+Set env vars to work with the db defined in docker-compose:
+
+.env
+
+```bash
+DATABASE_URL="postgresql://myuser:mypassword@localhost:5432/mydb?schema=public"
+```
 
 ## Prisma stuff
 
@@ -23,5 +35,3 @@ and import `PrismaClient` to be able to make the convenient quereis using object
 **NOTE** Every time you make a change to your schema and want your autocomplete to reflect this, you will need to rerun `prisma generate`. The prima client saves the generated code in node_modules/.prisma/client. This means that if changes were done to the schema, or if you clean the node_modules folder, you will need to rerun prisma generate. Automate this.
 
 `npx prisma generate`
-
-
